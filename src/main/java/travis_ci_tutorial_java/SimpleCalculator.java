@@ -17,6 +17,17 @@ public class SimpleCalculator {
 	
 	public int divide(int a, int b)
 	{
-		return a/b;
+	
+		int n=0;
+		if(b ==0)
+		{
+			throw new IllegalArgumentException("Can not divide by zero,"
+					+ " b should be a non zero integer");
+		}
+		else
+		{
+		n=a/b;
+		}
+		return n;
 	}
 }
