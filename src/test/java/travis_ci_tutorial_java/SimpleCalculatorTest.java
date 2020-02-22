@@ -6,16 +6,34 @@ import static org.junit.Assert.*;
 import org.junit.*;
 
 public class SimpleCalculatorTest {
+	
+	/*
+	 * Global Test Variables
+	 */
+	SimpleCalculator calc;
+	
+	@Before
+	public void setUp()
+	{
+		calc=new SimpleCalculator();
+	}
+	
+	@After
+	public void tearDown()
+	{
+		calc=null;
+	}
+	
+	
 	@Test
 	public void testAdd() {
-		SimpleCalculator calc = new SimpleCalculator();
 		assertEquals(calc.add(1, 1), 2);
 	}
 	
 	public void testMinus()
 	{
-		SimpleCalculator calc= new SimpleCalculator();
-		assertEquals(calc.minus(5, 3), 2)
+		assertEquals(calc.minus(5, 3), 2);
 	}
+	
 	
 }
