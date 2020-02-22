@@ -45,7 +45,7 @@ public class SimpleCalculatorTest {
 	@Test
 	public void testDivide()
 	{
-		assertEquals(calc.divide(15, 3), 5)
+		assertEquals(calc.divide(15, 3), 5);
 	}
 	
 }
