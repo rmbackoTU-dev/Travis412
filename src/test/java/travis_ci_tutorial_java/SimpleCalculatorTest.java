@@ -1,7 +1,6 @@
 package travis_ci_tutorial_java;
 
 import java.util.*;
-
 import static org.junit.Assert.*;
 import org.junit.*;
 
@@ -46,6 +45,34 @@ public class SimpleCalculatorTest {
 	public void testDivide()
 	{
 		assertEquals(calc.divide(15, 3), 5);
+	}
+	
+	@Test(expected=IllegalArgumentException.class)
+	public void testDivisorZeroIllegalArgumentThrown()
+	{
+		calc.divide(15, 0);
+	}
+	
+	@Test
+	public void testArithmeticErrorNotThrown()
+	{
+		ArithmeticException mathError=null;
+		
+		try
+		{
+			calc.divide(15, 0);
+		}
+		catch(Exception e)
+		{
+			if(e instanceof ArithmeticException)
+			{
+				mathError=(ArithmeticException) e;
+			}
+		}
+		finally
+		{
+			assertNull(" ArithmeticException occured while running divide method",mathError);
+		}
 	}
 	
 }
