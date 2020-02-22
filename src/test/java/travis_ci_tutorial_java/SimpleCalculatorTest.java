@@ -30,10 +30,22 @@ public class SimpleCalculatorTest {
 		assertEquals(calc.add(1, 1), 2);
 	}
 	
+	@Test
 	public void testMinus()
 	{
 		assertEquals(calc.minus(5, 3), 2);
 	}
 	
+	@Test
+	public void testMultiply()
+	{
+		assertEquals(calc.multiply(5, 3), 15);
+	}
+	
+	@Test
+	public void testDivide()
+	{
+		assertEquals(calc.divide(15, 3), 5)
+	}
 	
 }
